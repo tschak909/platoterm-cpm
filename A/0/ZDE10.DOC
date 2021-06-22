@@ -1,0 +1,1049 @@
+..Yoõ musô prinô thió filå iî "W¢ modå witè pagå lengtè seô tï 54
+..(thå default© sï thaô pagå numberó corresponä witè thå Tablå oæ 
+..Contentó anä thå Index®  Uså thå "L¢ optioî foò á lefô margiî 
+..("L8¢ centeró standarä pitcè oî 8.5¢ widå paper)¬ and thå "¢ 
+..optioî tï numbeò pages.
+
+                               ZDE
+  
+                     Z-Systeí Displaù Editor
+
+                     Versioî 1.°   1° Maò 89
+
+  ZDÅ anä itó documentatioî arå copyrighô 198¹ bù Carsoî Wilson¬ 
+  alì rightó reserved®  Theù maù noô bå circulateä iî anù 
+  incompletå oò modifieä forí withouô writteî permissioî oæ thå 
+  author®  Anù commerciaì uså oæ ZDE¬ defineä aó anù situatioî 
+  wherå thå duplicatoò receiveó revenuå bù duplicatinç oò 
+  distributinç ZDÅ bù itselæ oò iî conjunctioî witè anù hardwarå 
+  oò softwarå product¬ ió expresslù prohibiteä unlesó authorizeä 
+  iî writinç bù Carsoî Wilson.
+
+
+1®  Introduction.
+
+     ZDE¬ thå Z-Systeí Displaù Editor¬ ió á small¬ fast¬ powerfuì 
+texô editoò baseä Eriã Meyer'ó famouó Videï Displaù Editoò (VDE)®  
+ZDÅ retainó alì featureó oæ VDE¬ buô removeó defectó anä supportó 
+special ZCPÒ anä ZSDOÓ featureó sucè aó nameä directories¬ 
+registeò variables¬ automatiã disë relog¬ anä filå datestamğ 
+support®  Thå instalì prograí haó alsï beeî improveä (seå 
+ZDE10.NE× foò á completå rundowî oæ improvements)®  Aô thå samå 
+time¬ É havå trieä tï bå conscientiouó abouô thå balancå betweeî 
+featureó anä memorù usage®  Iæ É addeä everù ne÷ featurå oò 
+conveniencå thaô camå tï mind¬ wå woulä sooî havå á luxuriouó 
+in-memorù editoò foò ² kilobytå files¡  Mucè oæ thå followinç ió 
+adapteä witè permissioî froí Eriã Meyer'ó VDE.DOC.
+
+     ZDE'ó nativå ASCIÉ modå anä definablå macroó makå iô aî ideaì 
+programmer'ó editor» itó fulì formattinç anä printinç featureó 
+alsï makå iô aî efficienô worä processor®  Writteî entirelù iî Z8° 
+assembler¬ ZDÅ ió F-A-S-T®  Therå arå nï disë overlays¬ anä alì 
+editinç ió donå iî memory®  Aó á result¬ findinç á strinç neaò thå 
+enä oæ á 50Ë filå takeó WordStaò 3.³ abouô 1´ secondó (8MHú Z80)» 
+ZDÅ doeó iô iî undeò á second®  Thió ió likå movinç througè aiò 
+insteaä oæ molassesº yoõ wilì finä thaô yoõ caî dï morå oæ youò 
+worë oî screen¬ anä lesó oî paper.
+
+Amonç ZDE'ó featureó are:
+
+Full-screeî editinç       Useò areá anä nameä directorù support
+Blocë operationó          Wordwrağ anä reformat
+File datestamğ supporô    Macrï programs
+Disë filå operationó      Margins¬ tabs¬ spacing
+Finä anä replacå          WordStaò compatibility
+Manù prinô featureó       Undeletion
+Configurablå optionó      Supporô foò alì CP/Í terminals
+
+
+2®  Installinç ZDE.
+
+     ZDÅ workó witè Z8° CP/Í 2.² anä 3.° anä compatiblå systems®  
+Iô ió ideaì foò portablå computeró witè limiteä disë space®  Therå 
+arå manù useò configurablå options¬ anä ZDÅ caî bå installeä foò 
+alì CP/Í terminals®  Iæ yoõ arå runninç ZCPR¬ ZSDOÓ oò Z3PLUS¬ ZDÅ 
+offeró featureó noô availablå witè lesó advanceä systeí software¬ 
+buô theså systeí enhancementó arå noô required.
+
+     Tï instalì ZDE¬ uså thå ZDENSTAÌ configuratioî program» seå 
+thå accompanyinç filå ZDENSTAL.DOC®  Yoõ shoulä instalì ZDÅ foò 
+youò computer'ó terminaì aô thå earliesô convenience¬ sincå thió 
+greatlù enhanceó performance®  Therå arå manù otheò installablå 
+options» yoõ wilì discoveò ho÷ yoõ wanô everythinç seô iî thå 
+courså oæ usinç ZDE¬ sï don'ô worrù about goinç througè alì oæ iô 
+aô first®  Foò easå oæ reference¬ portionó oæ thió manuaì 
+referrinç tï installablå optionó anä settingó arå encloseä iî 
+squarå bracketó ("[¢ anä "]").
+
+
+3®  Invokinç ZDE.
+
+     ZDÅ ió invokeä froí youò system'ó commanä prompô usinç thå 
+followinç syntaø ("ufn¢ meanó "unambiguouó filå name"):
+
+     ZDÅ                 Begiî workinç oî á ne÷ file.
+
+     ZDÅ ufî             Ediô á ne÷ oò alreadù existinç file.
+
+     ZDÅ dir:ufî         Ediô á ne÷ oò existinç filå from anotheò 
+                          directory.
+
+     ZDÅ ufî í           Ediô á filå usinç modå "m."
+     ZDÅ ufn[m
+
+"m¢ abovå caî bå eitheò W¬ A¬ oò Î (seå Filå Modes¬ below)¬ anä 
+"dir¢ caî bå eitheò á drive¬ á useò area¬ á drivå followeä bù á 
+useò area¬ oò á ZCPÒ nameä directory®  Foò example:
+
+     ZDÅ A4:MYFILE.TXÔ Î      Begiî workinç oî MYFILE.TXÔ aô useò 
+                               areá 4¬ drivå A¬ iî non-documenô 
+                               mode.
+
+     Thå sizå oæ thå filå to bå editeä ió limiteä bù availablå 
+memory®  Thió wilì varù foò differenô systems¬ buô normallù thå 
+maximuí sizå wilì bå betweeî 4µ anä 55k®  Iæ á filå ió toï largå 
+tï edit¬ yoõ musô breaë iô uğ anä ediô thå pieceó separately®  
+Numerouó CP/Í utilitieó arå availablå whicè wilì breaë uğ anä 
+rejoiî ASCIÉ files.
+
+
+4®  ZDE'ó Commanä Set.
+
+     ZDE'ó commandó consisô oæ simplå one­ oò two-keù 
+combinations¬ easilù founä bù thå toucè typisô withouô 
+distraction®  Mosô commandó arå thå samå aó WordStar's®  Iæ yoõ 
+havå questionó thaô thió filå can'ô answer¬ á WordStaò manuaì maù 
+bå á usefuì reference®  Buô ZDÅ ió noô á WordStaò "clone"» therå 
+arå significanô differences¬ includinç aî extendeä seô oæ 
+ESC-commandó foò functionó sucè aó macroó (seå below).
+     Virtuallù completå compatibilitù witè thå WordStaò commanä 
+(sub)seô caî bå achieveä UNLESÓ thå keyó ^J¬ ^K¬ anä ^Ì arå useä 
+aó arro÷ keyó (aó oî manù CP/Í computers)®  Iî thió evenô ZDÅ 
+synonymó musô bå usedº ESC­ foò thå ^K­ prefix; ESC-È foò ^J» anä 
+^Ü foò ^Ì (seå ZDENSTAL.DOÃ foò terminaì installation).
+
+4.1®  Commanä Summary.
+
+     Below¬ thå "^¢ characteò indicateó uså oæ thå Ctrì keyº  ^Ë ½ 
+Ctrl+K®  Thå ESÃ (^K)¬ ^O¬ anä ^Ñ prefixeó requirå pressinç twï 
+keyó iî sequenceº ^Ï C¬ foò instancå meanó presó ^O¬ theî Ã (oò 
+^C)®  Anù prefiø maù bå canceleä bù typinç ESÃ oò Space.
+
+4.1.1®  Controì Keysº  Singlå Keystrokå Commands.
+
+     ^Ê (ESÃ H© ½ displaù Helğ menus.
+
+     CÒ ½ Carriagå returî (^M)®  Markó á paragrapè end.
+     BÓ ½ Backspacå (^H).
+    TAÂ ½ Harä Taâ modeº inserô taâ (^I)®  Variablå Taâ modeº movå 
+          tï nexô stop.
+
+     Arro÷ keysº  WordStarº ^Å up¬ ^Ø down¬ ^Ó left¬ ^Ä right.
+                  Alternateº configurable¬ defaulô ^K¬ ^J¬ ^H¬ ^L.
+
+     ^Æ ½ movå tï starô oæ nexô worä right.
+     ^Á ½ movå tï starô oæ nexô worä left.
+     ^Ò ½ scrolì bacë onå screen.
+     ^Ã ½ scrolì forwarä onå screen.
+     ^× ½ scrolì bacë onå line.
+     ^Ú ½ scrolì forwarä onå line.
+
+     ^Ç ½ delete characteò tï thå righô oæ thå cursor.
+    DEÌ ½ deletå characteò tï thå lefô (configurable).
+     ^Õ ½ undeletå á character.
+     ^Ô ½ deletå worä tï righô oæ cursor.
+     ^Ù ½ deletå currenô line.
+
+     ^Î ½ inserô á carriagå returî (breaë line© at presenô 
+          position.
+     ^Ö ½ togglå INSERÔ modå oî anä off.
+     ^Ş ½ togglå caså (upper/lower© oæ characteò aô cursor.
+     ^Ğ ½ inserô followinç controì codå iî text.
+     ^Â ½ reformaô currenô paragraph.
+     ^Ì (^\© ½ repeaô find/replacå (repeató lasô ^QÆ oò ^QÁ 
+               command).
+
+4.1.2®  Filå anä Blocë Commandsº firsô hiô ^Ë (oò ESC)¬ theî thå 
+        keù shown.
+
+     ^Ë É ½ displaù file/memorù Informatioî message.
+
+     ^Ë Æ ½ Lisô fileó iî disë directory.
+     ^Ë Å ½ Eraså á disë file.
+
+     ^Ë Ì ½ Loaä á branä ne÷ filå tï begiî editing.
+     ^Ë Î ½ changå thå currenô filå Namå (affectó Save¬ eXit).
+     ^Ë Ó ½ Savå thå currenô filå tï disk¬ anä continuå editing.
+     ^Ë Ä ½ Done®  Savå thå file¬ theî loaä á new one.
+     ^Ë Ø ½ eXitº Savå thå file¬ theî Quiô tï CP/M.
+     ^Ë Ñ ½ Quiô tï CP/M¬ abandoninç currenô file.
+
+     ^Ë Ò ½ Reaä á disë filå intï texô aô cursoò position.
+     ^Ë Ğ ½ Prinô thå texô (wholå filå oò block).
+
+     ^Ë Â ½ marë thå starô of á Block.
+     ^Ë Ë ½ marë thå enä oæ á block.
+     ^Ë Õ ½ Unmarë thå block.
+     ^Ë Ù ½ Deletå thå markeä block.
+     ^Ë Ã ½ Copù thå blocë texô aô presenô cursoò position.
+     ^Ë Ö ½ moVå thå blocë texô tï thå presenô cursoò position.
+     ^Ë × ½ Writå thå markeä blocë tï á disë file.
+
+4.1.3®  Escapå anä Macrï Commandsº firsô hiô ESC¬ theî thå keù 
+        shown.
+
+     ESÃ arrowsº  Left/Righô (includinç ^S/D© ½ shifô screeî 
+                                                horizontally
+                                                bù 3² columns.
+                  Up/Dowî (includinç ^E/X©    ½ shifô screeî 
+                                                vertically
+                                                bù 1/´ screen.
+     ESÃ TAÂ     ½ movå bacë tï lasô taâ stop.
+
+     ESÃ Í       ½ executå á Macrï strinç oæ commands.
+     ESÃ £       ½ storå macrï on numeriã keù foò lateò recall.
+     ESÃ 0..¹    ½ uså storeä key®  (Iî macrï modeº jumğ label.)
+     ESÃ !,=,~,« ½ useä iî Macrï programminç (seå below).
+     ESÃ »       ½ brieæ pause¬ durinç Macrï executioî only.
+
+4.1.4®  Quicë Commandsº firsô hiô ^Q¬ theî thå keù shown.
+
+     ^Ñ Arrowsº  Left/Righô (includinç ^S/D© ½ gï tï starô oò enä 
+                                               oæ line.
+                 Up/Dowî (includinç ^E/X©    ½ gï tï toğ oò bottoí 
+                                               oæ screen.
+     ^Ñ Ò ½ movå tï toğ oæ file.
+     ^Ñ Ã ½ movå tï enä oæ file.
+     ^Ñ É ½ movå tï specifieä pagå or linå number.
+     ^Ñ Â ½ movå tï markeä block.
+     ^Ñ Ñ ½ movå tï nexô linå iî queuå (ZCPÒ only).
+     ^Ñ Ú ½ movå tï nexô placå marker.
+
+     ^Ñ Æ ½ finä nexô occurrencå oæ á string.
+     ^Ñ Á ½ finä anä replacå á string.
+
+     ^Ñ Ù ½ deletå froí cursoò tï enä oæ currenô line.
+   ^Ñ DEÌ ½ deletå froí cursoò tï beginninç oæ currenô line.
+     ^Ñ Ô ½ deletå untiì specifieä characteò (caution--powerful!).
+     ^Ñ Õ ½ undeletå á line.
+
+4.1.5®  Onscreeî Commandsº firsô hiô ^O¬ theî thå keù shown.
+
+     ^Ï Arrowº  Uğ (includinç ^E© ½ makå currenô linå toğ oæ 
+                                    screen.
+
+     ^Ï Ò ½ seô righô margiî (columî ± turnó ofæ 
+            wordwrap/formatting).
+     ^Ï Ì ½ seô lefô margin.
+     ^Ï Ø ½ togglå Margiî Releaså on/off.
+     ^Ï Ã ½ centeò currenô line.
+     ^Ï Æ ½ aligî currenô linå flusè witè thå righô margin.
+
+     ^Ï Ñ ½ togglå headeò on/off.
+     ^Ï Ô ½ togglå ruleò linå on/off.
+     ^Ï Ä ½ togglå displaù oæ harä CRó on/off.
+
+     ^Ï Á ½ toggle Autï Indenô on/off.
+     ^Ï Ó ½ togglå Doublå Spacinç on/off.
+     ^Ï È ½ togglå hyphenatioî on/off.
+     ^Ï Ö ½ togglå taâ modå Hard/Variable.
+     ^Ï É ½ seô variablå taâ stop.
+     ^Ï Î ½ cleaò variablå taâ stop.
+
+     ^Ï Ğ ½ seô pagå lengtè (° turnó ofæ pagination).
+     ^Ï × ½ togglå windowinç on/ofæ (seå below).
+     ^Ï Ú ½ temporarilù blanë thå entirå screen.
+
+
+5®  Commanä Descriptions.
+
+5.1®  Auto-Indenô Modå (^O-A).
+
+     Auto-Indenô ió usefuì foò typinç outlines¬ structureä prograí 
+sourcå code¬ anä otheò texô wherå thå "lefô margin¢ varies®  
+Auto-Indenô causeó thå RETURÎ keù tï acô differentlyº Iæ yoõ arå 
+enterinç ne÷ text¬ iô wilì bå indenteä tï matcè thå previouó line® 
+Iæ yoõ arå jusô movinç througè thå file¬ thå cursoò advanceó pasô 
+anù existinç indentation.
+
+5.2®  Blocë Commandó (^K-B¬ -K¬ -U¬ -R¬ -Y¬ -W¬ -C¬ -V¬ -P-B¬ 
+      ^Q-B).
+
+     Á "block¢ oæ texô ió normallù delimiteä bù twï markeró 
+[defaultº ^@İ whicè remaiî iî memorù untiì reseô oò deleted.
+     ^K-Â markó thå beginninç oæ thå block» ^K-Ë markó itó end.
+Markeró arå inserteä iî thå text®  Thå twï markeró arå identical;
+thå firsô onå presenô ió thå start.
+     ^K-Õ unmarkó thå block¬ removinç anù marker(s© seô (blocë 
+markeró caî alsï bå deleteä individuallù aó ordinarù characters)®  
+Markeró arå automaticallù removeä aó appropriatå wheî ^K-B/-Ë arå 
+useä again.
+     ^K-Ò readó iî thå contentó oæ á disë file¬ insertinç iô aó á 
+blocë afteò thå currenô cursoò position®  Yoõ wilì bå askeä foò 
+thå namå (and¬ optionally¬ mode© oæ thå file®  Otheò blocë 
+operatioî commandó alì requirå á Blocë tï bå marked:
+     ^K-Ù deleteó thå blocë (includinç markers).
+     ^K-× writeó thå blocë texô tï á disë file» yoõ wilì bå askeä 
+foò thå filenamå (anä optionaì mode).
+     ^K-Ö moveó thå Blocë texô tï thå presenô cursoò location¬ 
+deletinç thå original» ^K-Ã copieó iô anä leaveó thå original®  
+Sometimeó ZDÅ wilì ruî ouô oæ memorù wheî movinç blockó withiî á 
+largå file®  Iæ thió occurs¬ jusô writå thå blocë tï á file¬ 
+deletå it¬ anä reaä iô bacë iî asº "^K-W¬ ^K-Y¬ ^K-R".
+    ^K-P-Â (^K-Ğ witè Â option© printó thå blocë text only.
+     Thå ^Q-Â command¬ froí whereveò yoõ arå iî thå file¬ moveó 
+thå cursoò tï thå Blocë start.
+
+5.3®  Cursoò Movemenô (Arro÷ keys» ^F» ^A» ^Q-R¬ -C¬ -I).
+
+     ZDÅ supportó threå setó oæ Arro÷ keys¬ whicè functioî 
+interchangeably®  Thå twï built-iî setó supporô thå WordStaò 
+"arro÷ keù diamond¢ ^E¬ ^X¬ ^D¬ ^S¬ anä thå ANSÉ standarä 3-bytå 
+sequenceó (ESC-[-A¬ etc.)®  Thå thirä seô ió user-configurable¬ 
+anä musô bå installeä witè ZDENSTAL®  Theså keyó movå thå cursoò 
+up¬ down¬ right¬ anä lefô respectively®  Noteº iæ yoõ instalì ^J¬ 
+^K¬ anä ^Ì aó arro÷ keys¬ yoõ musô uså ESC­ commandó foò help¬ 
+filå operations¬ anä repeaô find/replace¬ respectively.
+     Precedeä bù ^Q-¬ anù arro÷ keù (excepô ANSI© moveó morå 
+quicklyº tï thå toğ or bottoí oæ thå screen¬ tï thå lefô oò righô 
+enä oæ thå line.
+     Therå arå alsï twï worä movemenô commandsº ^Æ moveó right¬ tï 
+thå starô oæ thå nexô word» ^Á moveó left¬ tï thå starô oæ thå 
+previouó (oò current© word®  Botè havå maximuí rangeó oæ 25µ 
+characters.
+     Foò quicklù coverinç largå distances¬ thå commandó ^Q-Ò anä 
+^Q-Ã gï alì thå waù tï thå beginninç anä enä oæ thå file¬ 
+respectively¬ anä ^Q-É goeó tï anù specifieä pagå (oò line¬ iî 
+non-documents).
+
+5.4®  Deletinç (^G¬ DEL¬ ^T¬ ^Y¬ ^Q-Y¬ -DEL¬ -T).
+
+     Yoõ caî deletå texô onå CHARACTEÒ aô á timeº ^Ç deleteó tï 
+thå righô oæ thå cursor¬ anä DEÌ tï thå left®  [Iæ yoõ havå nï DEÌ 
+key¬ yoõ caî instalì anotheò equivalent.İ  Notå thaô thå ordinarù 
+BÓ (^H© doeó noô normallù delete.
+     ^Ô deleteó aî entirå WORÄ tï thå righô (uğ tï 25µ characters)
+     ^Ù deleteó thå entirå currenô LINE®  ^Q-Ù deleteó onlù thå 
+parô oæ thå linå tï thå righô oæ thå cursor» ^Q-DEÌ deleteó thå 
+parô tï thå left.
+     ^Q-Ô deleteó UĞ TÏ á specifieä character®  Exampleº "^Q-T.¢ 
+deleteó tï thå enä oæ thå sentence®  Speciaì caseº "^Q-T-CR¢ 
+deleteó tï thå nexô HARÄ CR¬ thå enä oæ thå paragraph®  Thió ió á 
+powerfuì command¬ sï uså iô witè caution.
+     Accidentallù deleteä texô caî usuallù bå recovereä (seå 
+Undelete¬ below).
+
+5.5®  Disë Operationó (^K-F¬ -E).
+
+     ^K-Æ giveó aî unsorteä lisô oæ disë FILESº hit CÒ tï lisô thå 
+directorù specifieä bù thå currenô file¬ oò specifù á drive¬ user¬ 
+oò nameä directorù (coloî optional)®  Iæ therå ió noô enougè rooí 
+tï fiô alì thå fileó oî thå screen¬ yoõ wilì seå "...¢ aô thå enä 
+tï indicatå thaô therå werå still more®  Presó ESÃ oò Spacå tï 
+continue.
+     ^K-Å wilì ERASÅ á singlå disë filå tï providå morå rooí oî 
+thå disë (nï wildcardó allowed).
+
+5.6®  Filå Commandó (^K-N¬ -S¬ -X¬ -Q¬ -D¬ -L).
+
+     ^K-Î NAMEÓ youò worë oò changeó thå currenô filå mode®  Yoõ 
+caî changå thå filenamå iî thå headeò beforå saving¬ and/oò changå 
+itó modå tï WordStar¬ ASCII¬ oò Nondocument®  Tï set thå filå 
+mode¬ introducå thå modå characteò witè thå lefô squarå bracket¬ 
+e.g.¬ "Nameº MYFILE.WÓ [W".
+     ^K-Ó SAVEÓ your workº what'ó iî memorù ió writteî tï disë 
+undeò thå filå namå iî thå headeò (yoõ musô havå á filå name» onå 
+wilì bå requesteä iæ necessary)®  Iæ thaô filå alreadù existed¬ á 
+backuğ (.BAK© filå maù bå preserveä [configurable» seå 
+installatioî guide]®  Iæ yoõ haven'ô changeä thå file¬ ZDÅ promptó 
+yoõ tï confirí thaô yoõ wanô tï resavå iô anyway.
+     Therå arå severaì differenô commandó foò finishinç up:
+     ^K-Ø saveó youò worë anä theî EXITÓ tï CP/M.
+     ^K-Ñ jusô QUITS®  Iæ thå filå haó beeî modified¬ ZDÅ askó iæ 
+yoõ wanô tï abandoî thå changes.
+     ^K-Ä (DONE© saveó youò work¬ theî loadó á ne÷ filå tï edit.
+     ^K-Ì quitó thå currenô filå anä LOADÓ á ne÷ onå tï begiî 
+editing.
+
+5.7®  Find¬ Replacå (^Q-F¬ -A¬ ^L¬ ^\).
+
+      ^Q-Æ ió thå commanä tï FINÄ á string®  Thå searcè normallù 
+proceedó froí thå cursoò positioî forward¬ anä ió caså 
+(upper/lower© insensitive®  Therå arå twï optionsº "B¢ ½ searcè 
+backwards»  "C¢ ½ caså sensitivå search®  Iæ used¬ thå optionó 
+musô bå encloseä iî slasheó (eg¬ "/bc/"© beforå thå searcè string® 
+(Iæ yoõ wanô tï searcè foò á strinç beginninç witè á slash¬ uså aî 
+emptù (//© optioî first.©  Iî addition¬ á ^P-Ú [thió caî bå 
+reconfiguredİ functionó aó á wildcarä matchinç anù singlå 
+character®  Otheò controì codes¬ likå ^Í foò newline¬ caî bå 
+includeä (witè thå ^Ğ prefiø wherå needed)®  Examples:
+
+     Findº /c/^MLABEÌ    matcheó "LABEL¢ aô starô oæ linå only;
+     Findº 4^Z^Z0±       matcheó "42201"¬ "47401"¬ etc;
+     Findº wordstaò      matcheó "WORDSTAR"¬ "WordStar¢ etc;
+     Findº ///8¸         matcheó "/88";
+     Findº /b/esã        lookó backwardó foò "Esc"¬ "esc"¬ etc.
+
+     ^Q-Á ió thå FIND/REPLACÅ command®  Iô askó foò á strinç tï 
+find¬ anä whaô tï changå iô tï (alì optionó abovå applù tï thå 
+searcè strinç only)®  Thå cursoò wilì bå placeä oî eacè occurrencå 
+oæ thå strinç successively¬ startinç aô thå cursoò location®  Yoõ 
+wilì seå thå prompô "Chg?¢ iî thå header®  Tï replacå thå olä 
+strinç witè thå ne÷ one¬ presó "Y"» anythinç elså skipó tï thå 
+next®  Tï changå alì furtheò occurrenceó withouô beinç asked¬ 
+presó "*"®  ESÃ canceló aô any time®  (Noteº iæ ^Q-Á ió useä iî á 
+Macro¬ iô wilì automaticallù assumå "*¢ witè nï furtheò inpuô 
+required.)
+     ^Ì (oò ^\¬ iæ ^Ì ió aî arro÷ key© repeató thå lasô ^Q-Æ oò 
+^Q-Á command®  Foò ^Q-A¬ yoõ wilì bå askeä whetheò yoõ wanô tï 
+replacå the founä string®  Foò both¬ directioî anä caså optionó 
+remaiî unchanged.
+
+5.8®  Headeò (^O-Q).
+
+     ZDÅ normallù giveó yoõ á header¬ oò statuó line¬ aô thå toğ 
+oæ thå screen®  However¬ iæ yoõ likå yoõ caî togglå thå headeò 
+displaù oî anä ofæ witè thå ^O-Ñ (QUIET© command®  [Thå headeò maù 
+alsï bå suppresseä bù default.İ  Thió letó yoõ seå morå filå text® 
+Iô caî alsï speeä uğ operatioî oî somå sloweò terminals¬ aó thå 
+positioî doesn'ô havå tï bå continuallù updated.
+
+     Á typicaì headeò linå lookó somethinç like:
+------------------------------------------------------------------
+B0/WORK:ZDE.DOÃ [Á Pç ¸    Lî 3±   Cì 5³   INÓ vô hù AÉ DÓ MÒ  ^Q_
+------------------------------------------------------------------
+     "B0/WORK:ZDE.DOÃ [A¢ ½ Currenô directory¬ filename¬ anä mode.
+     "Pç 8¬ etc¢ ½ Currenô positioî iî filå bù page¬ line¬ column® 
+Foò "N"ondocuments¬ therå ió nï pagå numbeò display®  Iæ 
+paginatioî (^O-P© ió off¬ yoõ wilì seå "Pç 0¢ (document© oò "OP¢ 
+(nondocument© here.
+     "INS¢ ½ Inserô modå oî (^V).
+     "vt¢ ½ Variablå tabó oî (^O-V).
+     "hy¢ ½ Hyphenatioî enabled® (^O-H©  Doesn'ô displaù iî "N¢ 
+            mode.
+     "AI¢ ½ Autï indenô modå oî (^O-A).
+     "DS¢ ½ Doublå spacinç (^O-S).
+     "MR¢ ½ Margins releaseä (^O-X)®  Doesn'ô displaù iî "N¢ mode.
+     "^Q_"º Prefiø keyó (anä somå prompts© displaù here.
+
+5.9®  Informatioî (^K-I).
+
+     ^KÉ displayó aî Informatioî messagå with:
+
+     ­ thå ZDÅ versioî anä date;
+     ­ whetheò (Y/N© thå filå haó beeî changeä sincå lasô saved;
+     ­ thå currenô sizå oæ thå filå iî bytes;
+     ­ thå numbeò oæ byteó oæ texô memorù useä anä freå (102´ 
+       byteó ½ 1K).
+
+     Yoõ wilì notå thaô thå filå useó abouô 20-25¥ lesó memorù 
+thaî itó actuaì length» thió ió duå tï ZDE'ó compressioî oæ text®  
+(Noteº ZDÅ ió limiteä tï 16-biô arithmetic®  Iî thå unlikelù evenô 
+thaô filå sizå shoulä exceeä 64Ë iô wilì bå showî moä 64K» jusô 
+adä 65536.)
+     Blocë moveó anä copyinç arå limiteä bù thå amounô oæ freå 
+memory®  Further¬ wheî therå ió lesó thaî 1Ë free¬ responså timå 
+caî geô verù slow.
+
+5.10®  Inserô Modå (^V).
+
+     ^Ö toggleó insertioî oî anä off®  Iæ inserô ió OFF¬ anù texô 
+tï thå righô oæ thå cursoò ió overwritteî aó yoõ type®  Iæ inserô 
+is ON¬ whaô yoõ typå ió inserted¬ anä existinç texô moveó tï thå 
+right.
+
+5.11®  Linå Spacinç (^O-S).
+
+     Thå ^O-Ó commanä toggleó betweeî singlå anä doublå linå 
+spacing®  Iî doublå spacå mode¬ thå followinç functionó generatå 
+doublå carriagå returnsº  CÒ (^M)¬ Inserô CÒ (^N)¬ Reforí (^B)¬ 
+Wordwrap®  Yoõ caî easilù miø singlå anä doublå spacing» thå ^Â 
+commanä caî converô betweeî thå two®  Noteº iæ yoõ prefeò tï keeğ 
+youò actuaì filå singlå spaced¬ yoõ caî stilì geô á double-spaceä 
+printout bù usinç thå "D¢ optioî oæ thå ^K-Ğ commanä (seå 
+Printing).
+
+5.12®  Marginó (^O-R¬ -L¬ -X¬ -C¬ -F).
+
+     ^O-Ò setó thå RIGHÔ margin¬ enablinç wordwrap¬ reformatting¬ 
+anä centering®  Á righô margiî oæ ± disableó alì formattinç 
+functionó (samå as iî "N"ondocumenô mode)®  Aô thå prompô 
+"Column:¢ enteò thå columî numbeò (1-255)¬ oò jusô hiô CÒ foò thå 
+currenô cursoò column®  Iæ thå valuå entereä conflictó witè thå 
+currenô lefô margin¬ ZDÅ setó thå lefô margiî tï 1.
+     ^O-Ì setó thå LEFÔ margiî iî aî identicaì fashion» oæ course¬ 
+thå valuå musô alwayó bå lesó thaî thå currenô righô margin¬ 
+meaninç it'ó besô tï seô thå righô margiî first.
+     ^O-Ø temporarilù RELEASEÓ thå marginó (resetó theí tï 1)¬ 
+allowinç yoõ tï typå outsidå them®  Uså ^O-Ø agaiî tï restorå thå 
+margins.
+     ^O-Ã CENTERÓ thå currenô linå witè respecô tï thå margins¬ iæ 
+set®  ^O-Æ setó thå currenô linå FLUSÈ right¬ iæ thå righô margiî 
+ió set.
+
+5.13®  Paginatioî (^O-P).
+
+     Thå ^O-Ğ commanä setó thå pagå length®  Enteò á valuå froí ° 
+tï 255¬ oò jusô hiô CÒ tï restorå thå defaulô valuå [normallù 54].
+     Wheî thå valuå ió nonzero¬ iô determineó thå pagå anä linå 
+showî iî thå documenô headeò ("Pç xø Lî xx")¬ anä page-orienteä 
+Prinô functionó (formfeeds¬ headers¬ start/stoğ print© arå enabled.
+     Wheî thå valuå ió zero¬ paginatioî ió off®  Thå headeò wilì 
+saù "Pç ° Lî xxxx"¬ showinç yoõ thå absolutå linå numbeò iî thå 
+file®  Also¬ printinç occuró witè nï pagå breakó oò formfeeds®  
+Thió caî bå usefuì foò printinç smalì thingó righô afteò eacè 
+otheò oî thå samå sheet» or¬ iî conjunctioî witè thå "*¢ prinô 
+option¬ caî bå useä tï prinô ouô multiplå copieó oæ indeø cards¬ 
+labels¬ etc.
+     ZDÅ neveò sendó á formfeeä beforå printing» begiî your filå 
+witè á ^P-Ì characteò iæ yoõ neeä one®  Otherwise¬ uså oæ ^P-Ì ió 
+noô recommendeä iî documenô fileó aó iô renderó ZDE'ó pagå counô 
+inaccurate.
+
+5.14®  Placå Markeró anä Linå Queuå (^P-Z¬ ^Q-Z¬ ^Q-Q).
+
+     Yoõ caî seô anù numbeò oæ temporarù PLACÅ MARKERÓ iî thå texô 
+witè ^P-Ú (theù wilì appeaò aó ^Z)®  Thå ^Q-Ú commanä moveó thå 
+cursoò tï thå nexô placå markeò iî thå file¬ cyclinç bacë tï thå 
+toğ oæ thå filå iæ needed®  Placå markeró arå NOÔ saveä tï disk.
+     ZCPÒ useró maù alsï storå á QUEUÅ oæ uğ tï eighô linå numberó 
+iî theiò user-defineä messageó (á seô oæ sixteeî byteó oæ 
+protecteä memorù "availablå foò useò definition")®  Thå ^Q-Ñ 
+commanä wilì theî cyclå througè thå queuå oæ linå numbers¬ 
+returninç tï thå firsô locatioî wheî iô reacheó á valuå oæ zero®  
+Á valuå greateò thaî thå numbeò oæ lineó iî thå filå takeó thå 
+cursoò tï thå enä oæ thå file®  Thå numberó arå storeä aó two-bytå 
+inverteä hexadecimaì words®  Thió facilitù ió intendeä aó aî 
+interfacå betweeî otheò programó anä ZDÅ foò sucè purposeó aó 
+storinç thå locationó oæ compileò errors¬ howeveò ZCPÒ useró maù 
+alsï finä iô usefuì tï POKÅ theså locationó directlù beforå 
+invokinç ZDE.
+
+5.15®  Printeò Codeó (^P).
+
+     Controì codeó foò speciaì effectó iî printinç caî bå entereä 
+iî thå texô witè thå ^Ğ prefix®  Thuó pressinç ^P-^È (oò ^P-H© 
+embedó á ^H¬ etc®  Severaì standarä codeó are:
+
+     ^È ­ backspacå ­ overstrikå previouó character
+     ^É ­ harä (ASCII© taâ ­ printeró responä variouslù tï this
+     ^Ì ­ formfeeä  (Noô recommendeä unlesó paginatioî (^O-P© 
+          disabled)
+
+     Thå Blocë marker¬ normallù ^@¬ cannoô bå embedded¬ anä ^Ú ió 
+reserveä foò uså aó á placå marker®  Controì codeó displaù oî 
+screeî aó capitaì letters¬ highlighteä iæ possible®  ZDÅ assumeó 
+theù arå noô characters¬ sï theù arå noô counteä wheî reformattinç 
+text.
+     Foò greateò convenience¬ yoõ caî alsï arrangå tï havå á 
+singlå ^P-codå producå aî entirå strinç oæ byteó foò commonlù useä 
+printinç effects®  ZDÅ supportó á subseô oæ WordStar'ó printeò 
+installation¬ seveî definablå codesº fouò toggles¬ fouò switches®  
+Thå Printeò Installatioî iî ZDENSTAÌ allowó yoõ tï chooså whaô 
+codeó yoõ wanô tï use¬ anä instalì thå actuaì controì sequenceó 
+youò printeò needs®  Thå defaultó are:
+
+     togglesº  ^B¬ ^D¬ ^S¬ ^Y
+     switchesº ^Q¬ ^W¬ ^E¬ ^R
+
+     Iî WordStaò theså toggleó arå Boldface¬ Doublestrike¬ 
+Underline¬ anä Ribbon/Italiã respectively¬ buô yoõ caî makå theí 
+anythinç yoõ like®  "Toggles¢ arå gooä foò featureó likå underlinå 
+anä bolä thaô arå turneä oî anä off®  "Switches¢ arå betteò foò 
+multivalueä parameteró likå characteò pitch.
+     Exampleº youò printeò useó ESC-U-0± (anä 00© tï turî 
+underlininç oî (anä off)®  Iæ yoõ instalì theså codeó witè 
+ZDENSTAL:
+                   ^Ó togglå onº  (03)1B5501
+                     ...anä offº  (03)1B5500
+
+theî alì yoõ havå tï typå iî ZDÅ tï geô underlineä texô isº 
+^PSunderlineä text^PS.
+
+5.16®  Printinç (^K-P).
+
+     Thå ^K-P commanä PRINTÓ alì oò parô oæ thå filå iî memory®  
+Yoõ wilì bå askeä foò á seô oæ "Options:"¬ aô whicè poinô yoõ maù 
+enteò zerï oò morå oæ thå following¬ iî anù order:
+
+     Â      printó onlù thå currentlù markeä BLOCK.
+     Ğ      PAUSEÓ foò your keystrokå beforå eacè pagå (sheeô 
+             feed).
+     Ä      DOUBLÅ SPACEÓ alì texô tï bå printed.
+     Lnî    setó thå printeò LEFÔ MARGIÎ tï nî columnó [thå 
+             defaulô valuå caî bå seô witè ZDENSTAL].
+     Ş      FILTERÓ controì characteró ^Ø tï texô "^X".
+     *nî    printó thå joâ ouô nî TIMEÓ (nn=1..255).
+     @nî    beginó printinç AÔ thå nn'tè page.
+     =nî    renumberó thå pageó beginninç witè nn.
+     #nî    printó onlù (uğ to© á TOTAÌ oæ nî pages.
+     "...¢  useó thå quoteä strinç aó á HEADER®  Thå string¬ 
+             followeä immediatelù bù thå pagå number¬ wilì prinô 
+             aô the toğ righô oæ eacè pagå neaò thå margiî (maxi-
+             muí lengtè ió 5° characters» aî emptù string¬ ""¬ 
+             giveó numbereä pageó witè nï headeò text.)
+
+Thå lasô fouò optionó (@,=,#,""© arå NOÔ alloweä iæ paginatioî ió 
+disableä (^O-P), oò iæ "B"locë prinô waó chosen®  Examples:
+
+Optionsº  L12P
+     ­ Prinô thå filå witè á lefô margiî oæ 1² columns¬ pausinç 
+       beforå eacè pagå foò yoõ tï presó á keù (otheò thaî Esc).
+
+Optionsº  @6#2=14"Instructions¬ pagå "
+     ­ Prinô thå sixtè anä seventè pageó oæ thå file¬ buô numbereä 
+       1´ anä 15¬ witè thå headeò shown.
+
+Optionsº  BD^*2
+     ­ Prinô ouô thå currenô markeä Blocë twice¬ doublå spaced¬ 
+       witè controì filtering.
+
+     Iî "W¢ mode¬ lineó beginninç witè á ".¢ wilì bå regardeä aó 
+WordStaò doô commands¬ anä wilì neitheò prinô ouô noò affecô thå 
+pagå counô (theù havå nï otheò effecô either).
+     Yoõ caî aborô printinç aô anù timå witè ESÃ (thió maù takå á 
+moment¬ oò á fe÷ keystrokes¬ dependinç oî youò BIOS).
+
+5.17®  Ruleò Linå (^O-T).
+
+     Tï helğ yoõ aligî texô properly¬ ^O-Ô toggleó displaù oæ á 
+"ruleò line¢ abovå thå text oî anä off.
+     Iî eacè columî yoõ wilì seå onå oæ severaì symbolsº "[]¢ 
+designatå thå currenô marginó (iæ set)» "-¢ indicateó areaó withiî 
+thå currenô margins¬ ".¢ outsidå them®  Also¬ taâ stopó arå markeä 
+bù eitheò "T¢ (Variable© oò "I¢ (Hard)®  Examples:
+
+("A¢ mode©      [-----T-----T-----------T--------------]........
+("N¢ mode©      I.......I.......I.......I.......I.......I.......
+
+5.18®  Tabó (^I¬ ESC-TAB¬ ^O-V¬ ^O-I¬ ^O-N).
+
+     Therå arå twï Taâ modesº Variablå anä Hard¬ anä thå ^O-Ö 
+commanä toggleó betweeî them®  Iî Harä Taâ modå thå Taâ keù 
+produceó aî actuaì ^É (ASCIÉ 09)» whetheò thió overwriteó anù 
+existinç texô dependó oî thå Inserô toggle®  Harä Tabó displaù bù 
+defaulô aô fixeä intervaló oæ ¸ screeî columnó [thió ió 
+configurablå tï anù multiplå oæ 2].
+     Iî Variablå Taâ mode¬ thå Taâ keù moveó thå cursoò tï thå 
+nexô variablå taâ stoğ (yoõ caî alwayó geô á Harä Taâ bù typinç 
+^P-I)®  Iæ Inserô ió on¬ spaceó arå inserteä uğ tï thå nexô taâ 
+stop®  Otherwise¬ existinç texô ió skippeä over¬ buô spaceó arå 
+stilì addeä aô thå enä oæ á linå aó needed®  Uğ tï eighô taâ stopó 
+maù bå seô with ^O-É anä cleareä witè ^O-N» thå defaultó arå iî 
+columnó 6¬ 11¬ 16¬ anä 2± [theså arå configurable]®  Aô thå 
+prompt¬ enteò thå columî numbeò desired¬ oò hiô RETURÎ foò thå 
+cursoò column.
+     Thå ^O-É commanä alsï acceptó twï multiple-seô inputsº "@nn¢ 
+setó taâ stopó everù "nn¢ columns¬ whilå "#n1,n2,...¢ setó tabó aô 
+columnó "n1,n2¬ ..."®  Botè removå anù pre-existinç tabs¬ anä 
+typinç "@¢ oò "#¢ alonå simplù clearó alì tabs.
+     Thå ESC-TAÂ commanä moveó backwarä (left© tï thå previouó 
+variablå oò harä taâ stop.
+
+5.19®  Undeletå (^U¬ ^Q-U).
+
+     Thå undeletå functionó maù bå useä (repeatedlù iæ necessary© 
+to recoveò á reasonablå amounô oæ texô deleteä eitheò bù 
+overtyping¬ oò witè anù oæ ZDE'ó deletå commands¬ IÆ thå cursoò 
+haó noô yeô beeî moveä away®  ^Õ undeleteó onå character» ^Q-Õ 
+doeó á wholå line.
+     Restrictionsº undeletå maù noô recoveò alì oæ á Blocë deletå 
+unlesó thå cursoò waó iî oò neaò thå blocë deleted¬ anä iô maù 
+worë imperfectlù iæ DEÌ haó beeî useä severaì timeó iî sequence.
+     Furtheò uså afteò alì deleteä texô ió recovereä wilì producå 
+junë (usuallù duplicateó oæ texô abovå thå cursor¬ whicè ió 
+sometimeó useful).
+
+5.20®  Upper/Loweò Caså (^^).
+
+     Thå ^Ş (ctl-caret© commanä changeó thå case oæ thå characteò 
+aô thå cursor¬ iæ iô waó á letter¬ anä moveó thå cursoò onå 
+characteò tï thå right®  Usefuì foò capitalizinç á strinç oæ 
+lowercaså text¬ oò vicå versa.
+
+5.21®  Windo÷ anä Screeî (^W¬ ^Z¬ ESC-Arrows¬ ^O-Up¬ -W¬ -Z).
+
+     ZDÅ supportó severaì functionó tï movå anä alteò thå displaù 
+screen.
+     Thå ^× anä ^Ú commandó scrolì thå screeî uğ anä dowî á linå 
+aô á time¬ withouô movinç thå cursoò (unlesó necessary).
+     Precedeä bù ESC¬ anù arro÷ (excepô ANSI© moveó thå screeî 
+ratheò thaî thå cursorº  thå texô aó á wholå shiftó up/dowî 1/´ 
+screen¬ oò right/lefô 3² columns¬ whilå thå cursoò stayó puô (thå 
+cursoò musô bå pasô columî 3² foò horizontaì shiftó tï work).
+     Precedeä bù ^O-¬ anù UĞ arro÷ keù (excepô ANSI© makeó thå 
+currenô texô linå thå toğ oæ thå screen.
+     Thå ^O-× commanä createó á WINDO× iî thå bottoí halæ oæ thå 
+screen¬ whicè retainó á copù oæ thå filå texô startinç aô thå 
+currenô line¬ pluó thå currenô statuó and/oò ruleò line(s)¬ iæ 
+any®  Editing continueó normallù iî thå toğ halæ oæ thå screen®  
+Thió ió usefuì foò comparinç differenô sectionó oæ texô withiî á 
+file¬ oò eveî betweeî differenô files®  Typinç ^O-× agaiî removeó 
+thå Window®  Noteº Windowinç ió onlù supporteä foò screenó oæ 1µ 
+oò morå lines.
+     Thå ^O-Ú commanä temporarilù zapó (blanks© thå entirå screen» 
+gooä foò avoidinç CRÔ burn-in¬ oò jusô protectinç worë froí pryinç 
+eyeó oò fingers®  Restorå thå screeî bù pressinç ESÃ oò SPACE®  
+Noteº iæ Windowinç waó iî effect¬ anù texô iî thå windo÷ wilì bå 
+lost.
+
+5.22®  Wordwrap¬ Reformaô (^B¬ ^O-D).
+
+     WORDWRAĞ ió automatiã iî Documenô ("W¢ oò "A"© modeó wheneveò 
+thå righô margiî ió set®  Anù texô entereä wilì bå formatteä tï 
+thå currenô margiî settingó aó yoõ type.  Thå enä oæ á paragrapè 
+ió markeä bù á "HARÄ CR"¬ whicè occuró wheî yoõ presó thå RETURÎ 
+keù (thió ió á CÒ immediatelù followinç á characteò oæ text)®  Iî 
+contrast¬ wheî wordwrağ occuró yoõ geô á "SOFÔ CR¢ (whicè ió 
+actuallù á CÒ witè á spacå beforå it)®  Yoõ caî changå á harä CÒ 
+intï á sofô one¬ oò vicå versa¬ bù deletinç oò addinç á spacå aô 
+thå enä oæ thå line®  Hittinç RETURÎ alsï hardenó á sofô CR®  Thå 
+distinctioî betweeî harä anä sofô CRó ió onlù importanô wheî 
+reformatting.
+     ^B REFORMATÓ froí thå linå thå cursoò ió on¬ tï thå enä oæ 
+thå paragraph¬ accordinç tï thå currenô margiî settingó anä linå 
+spacing®  ^Â maù bå useä noô onlù tï reshapå á paragrapè afteò 
+editing¬ buô alsï tï changå itó marginó anä linå spacing®  
+Indentatioî caî bå trickù iæ yoõ havå á lefô margiî set®  Iæ thå 
+currenô linå ió indenteä relativå tï thå nexô one¬ ZDÅ assumeó 
+thaô amounô aó youò paragrapè indentation.
+     ^O-Ä toggleó DISPLAÙ OÆ HARÄ CRs®  Harä CRs¬ otherwiså 
+invisible¬ caî bå causeä tï displaù aó á "<¢ character®  Thió caî 
+bå useful» somå maù finä iô distracting¬ sï iô turnó off.
+
+
+6®  Macros.
+
+6.1.  Macrï (ESC-M).
+
+     Á MACRÏ ió á strinç oæ ZDÅ commandó anä texô that¬ oncå 
+defined¬ caî bå repeateä automatically®  When yoõ typå ESC-Í yoõ 
+wilì bå askeä foò thå string¬ theî á "Repeaô count"®  Usuallù yoõ 
+wilì simplù typå á numbeò foò thå repeaô counô (0-9¬ oò "*¢ foò 
+"indefinitely")®  Yoõ wilì seå thå resultó aó thå macrï executes¬ 
+anä yoõ caî aborô iô aô anù time bù pressinç ESC®  Iæ yoõ arå surå 
+yoõ kno÷ whaô you'rå doing¬ yoõ caî speeä uğ Macrï executioî bù 
+specifyinç "Quiet¢ modeº presó "Q¢ beforå thå repeaô count®  Onlù 
+thå header¬ iæ present¬ wilì bå updateä aó thå Macrï runs.
+     Macroó alsï stoğ any timå aî erroò occurs» thå erroò messagå 
+wilì bå visible¬ anä caî bå cleareä bù pressinç ESC®  Manù 
+commandó (likå Finä oò Reformat© arå designeä tï generatå erroró 
+aô thå enä oæ thå filå sï thaô indefinitå ("*"© Macroó containinç 
+theí halô there®  Yoõ maù neeä tï aborô otheò indefinitå Macroó 
+manually.
+     ZDÅ turnó INSERÔ OFÆ beforå runninç á macro¬ sï thaô thå samå 
+keù sequencå wilì alwayó havå thå samå effect®  INSERÔ statuó ió 
+restoreä wheî thå macrï terminates.
+     Iî ordeò tï includå anù inpuô linå editinç characteró (BS¬ 
+CR¬ etc.© iî á macro¬ yoõ musô prefiø theí witè ^P®  (NOTEº  Tï 
+makå theí easieò to reaä anä understand¬ Macrï listingó arå giveî 
+herå aó theù function¬ noô aó theù arå typeä in®  ^Ğ prefixeó aó 
+needeä arå NOÔ shown®  Keystrokeó arå separateä bù dasheó oò 
+commaó foò clarity¬ anä "_¢ meanó á spacå oò blank.© Herå arå somå 
+samplå Macros:
+
+     1®  Vie÷ á filå bù scrollinç slowlù througè it:
+
+               ESC-;¬ ^C
+
+         Thió wilì pause¬ theî scrolì down®  (Uså á repeaô counô 
+          oæ "*".)
+     
+     2®  Caî yoõ figurå ouô whaô thió onå does¿  
+
+       ^QR¬ ^QF¬ (¬ CR¬ ^G¬ ^KB¬ ^QF¬ )¬ CR¬ ^G¬ ^KK¬ ^QC¬ CR¬ ^KV
+
+         (Answerº  .eliæ ehô fï dnå ehô tá mehô fï tsiì á gnikaí 
+         eliæ á fï tuï sesehtnerağ né stnemmoã ekaô lli÷ tI)
+
+     ZDÅ Macroó arå verù powerfuì tools¬ particularlù giveî theiò 
+programmabilitù anä storagå oî functioî keys.
+
+6.2®  Macrï Keù (ESC-#¬ ESC-0..9).
+
+     Uğ tï 1° MACRÏ KEYÓ caî bå storeä (0..9)¬ bù enterinç theí 
+witè thå ESC-Í command¬ theî usinç ESC-£ tï savå them®  Theù caî 
+theî bå recalleä anä useä simplù bù typinç ESC-number®  Exampleº 
+typinç ESC-#-° wilì storå thå lasô Macrï useä iî thå ESC-° commanä 
+sï thaô iô caî bå recalleä and reuseä aô anù futurå timå simplù bù 
+typinç ESC-0.
+     Ordinarily¬ Macrï Keyó operatå jusô likå thå originaì Macro¬ 
+asking foò á "Repeaô count¢ wheî executed®  Iæ yoõ wanô tï 
+suppresó thió prompô (resultinç iî á "functioî key¢ thaô executeó 
+jusô once© yoõ caî typå "N¢ (foò Nï repeat© beforå storinç thå keù 
+number®  Exampleº  ESC-#-N-° makeó ESC-° á no-repeaô macrï key®  
+Iæ yoõ alsï don'ô neeä tï seå thå Macrï work¬ anä wanô tï makå iô 
+faster¬ yoõ caî makå iô QUIEÔ aó welì bù typinç "Q¢ insteaä (foò 
+Quiet© beforå thå keù number®  Exampleº ESC-#-Q-° storeó ESC-° aó 
+á quieô no-repeaô keù sequence.
+     Iæ thå Macro (ESC-M© strinç ió empty¬ usinç ESC-£ wilì deletå 
+á Macrï Key®  Usinç á defineä Keù makeó iô thå lasô macrï used¬ sï 
+iô caî bå storeä agaiî iî anotheò keù iæ desired®  Tryinç tï uså 
+aî undefineä Macrï Keù resultó iî aî error.
+     Therå arå 50° byteó totaì availablå foò alì 1° keys¬ anä á 
+12¸ bytå limiô foò anù onå Keù (ZDE'ó owî inpuô linå wilì onlù 
+accepô 6µ bytes¬ but ZDENSTAÌ caî handlå uğ tï thå fulì 128.)
+     USAGÅ HINTº Iæ yoõ wanô tï re-uså á macrï withouô havinç tï 
+typå iô iî again¬ uså ESC-£ tï assigî iô tï á key¬ theî calì iô uğ 
+bù number.
+     Besideó simplù storinç Macros¬ herå arå somå usefuì Macrï 
+Keys:
+
+     1®  Storinç differenô setó oæ marginó (e.g.¬ foò quotes)®  
+     Foò example,
+               ^OL¬ 12¬ CR¬ ^OR¬ 66¬ CR
+
+     2®  Typinç anù frequentlù repeateä phrase» "ESC-6¢ ió mucè 
+     morå convenienô thaî "^PSWorlä Widå Widgetó Ltd. (N.A.)^PS".
+
+     3®  Swağ thå twï characteró precedinç thå cursor:
+               ^S¬ ^S¬ ^G¬ ^D¬ ^U¬ ^U¬ ^D¬ ^G
+
+[ZDENSTAÌ allowó yoõ tï instalì defaultó foò alì teî Macrï Keys®  
+Thuó á copù oæ ZDÅ caî bå customizeä foò anù task¬ sucè aó thå 
+formattinç requirementó oæ specializeä writinç oò programminç 
+languages.]
+
+6.3®  Macrï Programminç (ESC-0..9¬ ESC-!,=,~,+,;).
+
+     ZDÅ haó severaì commandó whicè functioî onlù iî á Macrï 
+string¬ anä givå yoõ controì oveò thå executioî oæ á macro¬ 
+allowinç truå programming.
+     ESC-0..¹ functioî aó LABELÓ 0..¹ wheî entereä aó parô oæ á 
+Macro®  Theù havå nï effect¬ buô caî bå "jumped¢ tï bù otheò 
+commands.
+     ESC-¡ followeä bù 0..¹ ió á JUMĞ instruction¬ anä causeó 
+macrï executioî tï resumå witè thå commanä followinç thå labeì 
+ESC-0..9®  Exampleº ESC!² jumpó tï labeì 2®  Aó twï speciaì cases¬ 
+ESC-!Û jumpó tï thå beginninç oæ thå Macro¬ anä ESC-!İ jumpó tï 
+thå enä (aborts).
+     ESC-½ anä ESC-~¬ followeä bù á characteò anä theî á labeì 
+0..¹ (oò "[","]")¬ arå CONDITIONAÌ JUMPSº theù jumğ tï thå labeì 
+oò thå starô oò enä oæ thå macrï IÆ thå characteò aô thå cursoò 
+positioî matcheó (ESC-=© oò doesn'ô matcè (ESC-~© thå characteò 
+specified®  Exampleº ESC~^M² jumpó tï ESC-² iæ thå currenô 
+characteò ió NOÔ á CR.
+     ESC-½ anä ESC-~¬ followeä bù á characteò anä theî ">¢ oò "<"¬ 
+arå SEARCÈ LOOPS®  Theù wilì continuå tï movå thå cursoò righô 
+(">"© oò lefô ("<"© AÓ LONÇ AÓ thå characteò aô thå cursoò matcheó 
+(ESC-=© oò doesn'ô matcè (ESC-~© thå specifieä character®  Botè 
+searcè loopó terminatå automaticallù aô thå beginninç oò enä oæ 
+thå file®  Exampleº ESC=_¾ moveó righô aó lonç aó thå currenô 
+characteò ió á space.
+     ESC-+¬ followeä bù 0..9¬ CHAINÓ tï anotheò macrï key, 
+allowinç yoõ tï builä macroó stringó longeò thaî thå storagå limiô 
+oæ anù onå key®  Iô doeó noô "call¢ thå key» therå ió no 
+returning®  Exampleº ESC+¹ chainó tï Keù 9.
+     ESC-» (semicolon© giveó á brieæ pause¬ presumablù sï thå useò 
+caî seå what'ó happeninç oî screen.
+     Macrï programó arå storeä jusô likå anù otheò macrï strinç 
+(usuallù witè "N"ï repeaô count)®  Iæ yoõ prograí iî aî endlesó 
+loop¬ yoõ wilì aô somå poinô havå tï aborô witè ESC®  Don'ô makå 
+macrï programó "Q"uieô untiì you'rå surå theù work.
+     Exampleº herå ió á gooä macrï prograí (besô storeä aó á Quieô 
+Key© tï movå thå cursoò tï thå starô oæ thå currenô sentence:
+
+       ESC~.1¬ ^S¬ ESC1¬ ESC~.<¬ ESC2¬ ^D¬ ESC=_2¬ ESC=^M2
+
+Yoõ coulä writå thió ouô iî programmer'ó pseudo-codå as:
+
+         Iæ noô ".¢ gotï label1
+         Movå lefô                 ;movå lefô iæ alreadù oî period
+label1º  Whilå noô ".¢ movå Lefô   ;movå lefô tï previouó period
+label2º  Movå righô                ;no÷ movå bacë right
+         Iæ ¢ ¢ gotï label²        »  aó lonç aó yoõ seå á space
+         Iæ "^M¢ gotï label²       »  oò á Return
+         (alì done)
+
+
+7®  Generaì Information.
+
+7.1®  Disë Space.
+
+     ZDÅ isn'ô disk-bound» iæ yoõ ruî ouô oæ disë space¬ jusô 
+inserô anotheò disë (alwayó keeğ á blanë FORMATTEÄ disë around)®  
+Alternatively¬ yoõ caî uså thå ESC-Æ anä ESC-Å commandó tï purgå 
+unneedeä files®  [Iæ yoõ havå smalì disks¬ yoõ caî alsï instalì 
+ZDÅ noô tï preservå BAË files.]
+     Leô ZDE'ó filesizå limitó encouragå yoõ tï breaë worë uğ intï 
+fileó oæ 50Ë oò less» largeò fileó makå inefficienô uså oæ floppù 
+disks.
+
+7.2®  Erroò Messages.
+
+     Presó ESÃ oò Spacå tï continue®  "Error¢ alonå meanó thå 
+commanä useä jusô won'ô worë iî thió situation®  (Exampleº á blocë 
+commanä waó useä witè nï blocë marked.©  Morå specifiã erroró are:
+
+  "Ouô oæ Memory¢ ­ thå file¬ block¬ oò keù strinç won'ô fiô iî 
+                     RAM.
+    "Invaliä Key¢ ­ aî illegaì commanä keù sequencå waó pressed.
+      "I/Ï Error¢ ­ filå noô found¬ disë full¬ empty/invaliä 
+                     drive¬ etc.
+"Cannoô Reformat¢ ­ worä toï long¬ oò marginó invalid.
+      "Noô Found¢ ­ thå objecô oæ á searcè waó noô found.
+   "Syntaø Error¢ ­ á macrï programminç commanä waó misused.
+
+7.3®  Filå Modes.
+
+     ZDÅ haó threå FILÅ MODESº "W"ordStaò document¬ "A"SCIÉ 
+document¬ anä "N"on-document®  Thå basiã differencå concernó thå 
+formaô oæ disë files.
+     Iî "W¢ mode¬ ZDÅ readó anä writeó WordStar-compatiblå files®  
+ZDÅ caî ediô á WordStaò document¬ excepô thaô anù righô 
+justificatioî wilì bå lost®  WordStaò caî ediô anù ZDÅ "W¢ filå iî 
+Documenô mode.
+     Iî "A¢ oò "N¢ mode¬ ZDÅ readó anä writeó texô aó standarä 
+ASCIÉ 7-biô characters¬ á universaì formaô accepteä bù virtuallù 
+alì software®  Thå onlù differencå betweeî "A¢ anä "N¢ modeó lieó 
+iî thå defaulô settingó oî loadinç á ne÷ file.  Typicallù "A¢ modå 
+ió useä foò worä processing¬ anä "N¢ modå foò programminç anä 
+otheò technicaì applications.
+
+DEFAULTS FORº                Marginó      Tabó       Harä CÒ disp.
+-----------­                 ------­      ---­       -----------­   
+"A"SCIÉ oò "W"ordStaò modå   ACTIVÅ       VARIABLÅ   [ON]
+"N"on-documenô               DISABLEÄ     HARÄ       OFF
+
+     Thå filå modå optioî caî bå specifieä alonç witè thå filenamå 
+aô anù ZDÅ filå functioî prompt¬ allowinç yoõ tï miø WordStaò anä 
+ASCIÉ disë fileó aó needeä (seå Invokinç ZDE¬ above)®  Yoõ caî 
+alsï changå thå currenô modå witè thå ^K-Î functioî bù enterinç á 
+ne÷ modå (e.g.¬ "[W"© witè oò withouô á filename.
+     [ZDENSTAÌ allowó yoõ tï selecô á defaulô filå mode¬ tï bå 
+useä wheî nï modå ió specifieä (originallù thió ió "A")®  Further¬ 
+yoõ caî specifù twï filetypå maskó foò automatiã modå selectioî 
+(e.g.¬ alì "ASM¢ fileó aó "N¢ mode© tï overridå thaô default.]
+     NOTÅ OÎ ASCIÉ FILEÓ ­ Thå "A"SCII-documenô filå formaô useä 
+sincå VDÅ 2.50¬ tï allo÷ accuratå formattinç anä WordStaò 
+compatibility¬ distinguisheó betweeî HARÄ anä SOFÔ CRó (seå 
+Wordwrap¬ above)®  Consequently¬ iæ yoõ ediô aî ASCIÉ filå createä 
+bù otheò softwarå (includinç earlieò versionó oæ VDE)¬ iô maù 
+appeaò tï bå fulì oæ harä CRs¬ makinç texô impossiblå tï reformat® 
+Therå arå twï easù wayó tï solvå thió problemº first¬ yoõ caî uså 
+^Q-Á tï finä "^M"ó anä selectivelù replacå theí witè ¢ ^M"®  
+Alternatively¬ thå followinç Macrï (besô storeä aó a Quieô macrï 
+Key© doeó á gooä joâ oæ "softeninç up¢ paragraphó foò reformatting:
+
+               ^QS,^X,ESC=_],ESC=CR],^S,^V_^V,^D,ESC![
+
+7.4®  Hyphenatioî (^O-H).
+
+     ZDÅ can'ô introducå hyphens¬ buô iô doeó recognizå theí iî 
+thå text¬ treatinç theí aó á legitimatå placå tï breaë á line¬ sï 
+iæ yoõ havå á lonç worä closå tï thå margin¬ yoõ caî inserô á 
+hypheî wherå you'ä likå thå worä tï bå broken.
+     Similarly¬ ZDÅ can'ô unhyphenate®  Iæ iô ió tryinç tï 
+reformaô anä findó á hypheî aô thå enä oæ á line¬ iô wilì pauså tï 
+asë yoõ whaô tï dï witè it®  Yoõ wilì seå thå prompô "Chg?¢ iî thå 
+header¬ anä can:
+     Presó "Y¢ tï removå thå hypheî anä space¬ joininç thå word;
+           "N¢ tï leavå thå hyphen¬ buô stilì joiî thå word;
+           "ESC¢ tï leavå botè thå hypheî anä thå spacå alone.
+Typicallù yoõ woulä chooså "Y¢ foò "soft¢ hyphenó thaô yoõ 
+introduceä tï breaë uğ á worä ("intro-duction")» "N¢ foò harä 
+hyphenó thaô arå parô oæ á worä ("vis-a-vis")» anä "ESC¢ foò 
+punctuatioî (dasheó "--"¬ etc.)®  Afteò youò choice¬ reformattinç 
+wilì proceeä automatically.
+     Yoõ caî togglå hyphenatioî oî anä ofæ witè ^O-H®  Iæ off¬ 
+hyphenó arå noô treateä differentlù froí anù otheò texô character® 
+[Thå ^O-È defaulô caî bå changeä witè ZDENSTAL.]
+
+7.5®  Interruption.
+
+     Iæ ZDÅ ió interrupteä bù messageó froí otheò softwarå (BIOÓ 
+error¬ residenô utilities¬ etc.)¬ iô maù loså controì oæ thå 
+screen®  Thå besô waù tï returî iô tï normaì ió bù blankinç anä 
+restorinç thå screeî (^O-Z¬ ESC).
+
+7.6®  Prompts.
+
+     First¬ ZDÅ haó severaì simplå promptó requirinç yoõ tï 
+confirí aî actioî bù typinç "Y¢ oò "N":
+
+       "Abandoî changes?¢ ­ warnó thå filå yoõ wanô tï Quiô haó 
+                             beeî changed.
+"Unchanged» savå anyway?¢ ­ remindó thå filå yoõ wanô saveä isn'ô 
+                             changed.
+       "Deletå original?" ­ dï yoõ wanô tï deletå blocë copieä 
+                             froí 2nä file?
+                   "Chg?¢ ­ dï yoõ wanô tï changå thió instancå oæ 
+                             á string?
+
+Then¬ therå arå á fe÷ speciaì purposå prompts:
+
+          "Repeaô count:¢ ­ enteò (optionaì "Q¢ and© repeaô counô 
+                             foò Macro.
+            "Keù number:¢ ­ enteò (optionaì "N/Q¢ and© keù numbeò 
+                             foò Key.
+                    "Rdy¢ ­ presó anù keù tï print nexô pagå (ESÃ 
+                             quits).
+
+Finally¬ therå arå á varietù oæ promptó foò eitheò numeriã oò 
+string input¬ likå "Column:¢ oò "Finä string:"®  Yoõ arå expecteä 
+tï typå iî á strinç (uğ tï 6µ characters)®  Thå followinç controì 
+keyó operate:
+
+         Correcô mistakeº     BÓ (^H)¬ ^S¬ oò Del
+         Eraså entirå entryº  ^X
+         Aborô operationº     ^U
+
+Notå thaô tï geô anù oæ theså codes¬ oò á CR¬ intï thå strinç 
+itself¬ yoõ musô precedå iô witè ^Ğ (thió includeó ^P)®  Examplesº 
+tï finä á linå beginninç witè á "*¢ (finä "^M,*"© type
+
+               ^Q-F¬ ^P-CR¬ *¬ CR.
+
+No÷ tï geô this intï á Macrï witè ESC-M¬ yoõ woulä havå tï type
+
+               ESC-M¬ ^Q-F¬ ^P-P¬ ^P-CR¬ *¬ ^P-CR¬ CR.
+
+7.7®  WordStaò Compatibility.
+
+     Iî mosô respectó ZDÅ operateó mucè likå WordStar» onå biç 
+differencå ió thå absencå oæ á "No-File¢ menu®  Yoõ arå alwayó iî 
+ediô mode» uså ^K-Ì tï selecô á ne÷ filå tï edit.
+     Iæ thå keyó ^J¬ ^K¬ ^Ì arå iî uså aó CP/Í arro÷ keys¬ yoõ 
+musô uså ZDE'ó originaì commanä seô tï substitutå foò theí aó 
+follows:
+
+                    Blocë prefiø (^K-)..® ESC-
+                    Helğ menõ (^J)......® ESC-H
+                    Repeaô finä (^L)....® ^\
+
+     Iæ theså keyó arå NOÔ installeä aó arro÷ keys¬ theù retaiî 
+theiò WordStaò functions®  Then¬ oæ course¬ ZDÅ lackó somå 
+WordStaò commands¬ anä haó somå oæ itó own®  Asidå froí these¬ 
+therå arå thå followinç differenceó iî commoî commands:
+
+COMMOÎ USÅ         WORDSTAÒ ´    ZDÅ    ZDÅ NOTES
+Hidå blocë         ^K-È         ^K-Õ    Actuallù unmarkó block.
+Eraså disë filå    ^K-Ê         ^K-E
+Seô Placå Marë     ^K-0..¹      ^P-Ú    Noô individuallù numbered.
+Gï tï Placå Marë   ^Q-0..¹      ^Q-Ğ    Cyclic.
+
+COMMOÎ COMMANÄ     WORDSTAÒ ´ USÅ        ZDÅ USE
+      ^Ş           Softeî harä CÒ        Transposå upper/lowercase
+      ^K-Î         Column blocë modå     Renamå currenô work
+      ^O-Ä         Displaù ^Ğ codeó      Displaù harä CRs
+      ^O-Æ         Ruleò froí texô       Flusè right
+      ^O-Ğ         Previe÷ modå          Pagå length
+      ^Q-Õ         Repeaô aligî          Repeaô undelete
+
+Notå thaô ZDÅ doeó noô implemenô WordStaò "doô commands¢ iî text¬ 
+thougè iî "W¢ modå iô avoidó printinç them.
+
+
+8®  Disclaimer.
+
+     Yoõ uså ZDÅ aô youò owî risk®  Thå authoò acceptó nï 
+liabilitù foò anù damageó resultinç froí itó uså oò misuse®  
+Direcô probleí reportó anä suggestionó tï thå author» includå á 
+stampeä returî envelopå foò á replù iæ desired®  Thankó tï thå 
+manù useró oæ ZDÅ whoså feedbacë haó leä tï improvementó anä buç 
+fixeó iî thå past.
+
+     Carsoî Wilsoî              Sysopº Antelopå Freewaù RAS
+     135¹ W® Greenleaæ                 312-764-5162¬ Chicago
+     Chicago¬ IÌ 6062¶                 2´ hours¬ 3-12-240° bauä 
+

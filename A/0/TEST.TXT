@@ -1,0 +1,4 @@
+Here is a text written on Wordstar
+
+.... now modified on Notepad++
+
