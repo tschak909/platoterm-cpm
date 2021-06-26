@@ -32,7 +32,7 @@ CP/M Keyboard
 
 The PLATO keyboard is mapped onto the CP/M keyboard. CTRL is used to access the special PLATO keys, with ESC acting as a SHIFT key in combination for shifted combinations.
 
-| PLATO KEY  	| Apple Key  	|
+| PLATO KEY  	| PC Key  	|
 |---	|---	|
 | ANS  	| CTRL-A  	|
 | BACK  	| CTRL-B  	|
